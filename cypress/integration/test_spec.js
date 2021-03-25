@@ -7,7 +7,8 @@ describe('testing popup function', () => {
         });
 
         cy.window().then(function (win) {
-            cy.get('button').click().then(() => {
+            cy.get('button').click()
+            cy.contains('This is the last page').then(() => {
                 expect(win.open).to.be.called
             })
         })
